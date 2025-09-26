@@ -372,7 +372,7 @@ export default function ThreeDCarouselPlayer() {
               </div>
 
               {/* Progress */}
-              <div className="flex items-center gap-3 flex-1 min-w-0">
+              <div className="flex progress items-center gap-3 flex-1 min-w-0">
                 <span className="tabular-nums text-xs font-medium text-zinc-600 dark:text-zinc-400 w-12 text-right">
                   {formatTime(progress)}
                 </span>

@@ -298,6 +298,15 @@ article{
  overflow: auto;
   margin-left:-35px ;
 }
+
+.aud-player {
+
+ width: 100vw;
+position: relative;
+left: 80%;
+
+}
+
 .log-text{
   overflow:auto;
 background-size: cover;
