@@ -1,0 +1,475 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'Protomono';
+  src: url('/fonts/Protomono-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lomo Copy';
+  src: url('/fonts/LomoCopyLTStd-Mezzo.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProtoMono-Regular";
+  src: url("/fonts/ProtoMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.hug{
+    font-family: ProtoMono-Regular, monospace, Helvetica, Arial, sans-serif !;
+}
+
+
+
+/* From Uiverse.io by Cevorob */ 
+.btn-1 {
+ position: relative;
+ height: 50px;
+ padding: 0 30px;
+ border: 2px solid white;
+ background: transparent;
+ user-select: none;
+ white-space: nowrap;
+ transition: all .05s linear;
+ font-family: inherit;
+}
+
+.btn-1:before, .btn-1:after {
+ content: "";
+ position: absolute;
+ background: black;
+ transition: all .2s linear;
+}
+
+.btn-1:before {
+ width: calc(100% + 6px);
+ height: calc(100% - 16px);
+ top: 8px;
+ left: -3px;
+}
+
+.btn-1:after {
+ width: calc(100% - 16px);
+ height: calc(100% + 6px);
+ top: -3px;
+ left: 8px;
+}
+
+.btn-1:hover {
+ cursor: crosshair;
+}
+
+.btn-1:active {
+ transform: scale(0.95);
+}
+
+.btn-1:hover:before {
+ height: calc(100% - 32px);
+ top: 16px;
+}
+
+.btn-1:hover:after {
+ width: calc(100% - 32px);
+ left: 16px;
+}
+
+.btn-1 span {
+ font-size: 15px;
+ z-index: 3;
+ position: relative;
+ font-weight: 600;
+}
+body  {
+  font-family: 'Protomono', monospace ;
+  background-color: black;
+    overflow-x: hidden;
+}
+.head {
+  position: relative;       /* Make pseudo-element position relative to this div */
+  z-index: 0;               /* Keep text above */
+  color: white;             /* Text color */
+}
+
+/* Pseudo-element for background */
+.head::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: url('https://i.gifer.com/2Bap.gif') center/cover no-repeat;
+  opacity: 0.3;
+  z-index: -1;
+}
+.sidebar{
+  background-color: red !important;
+ 
+}
+.bottom-items{
+  font-family: 'Protomono', monospace;
+}
+.grid-items p{
+  font-family: 'Protomono', monospace !important;
+}
+.grid-items h1{
+ font-family: 'Lomo Copy', sans-serif;
+}
+article{
+    font-family: 'Lomo Copy', sans-serif;
+}
+/*practice code*/
+@keyframes flicker {
+  10%, 29%, 31%, 33%, 45%, 74%, 86%, 100% {
+    opacity: 0.2;
+    text-shadow: none;
+  }
+  40%, 42%, 44%, 75% {
+    opacity: 1;
+    text-shadow: 0 0 8px white, 0 0 12px white;
+  }
+}
+
+.flicker {
+  color: rgb(177, 176, 176); /* gold/yellow color like a bulb */
+  font-weight: bold;
+  animation: flicker 1s infinite;
+}
+
+.menu__icon {
+  width: 2rem;
+  height: 2rem;
+  padding: .25rem;
+
+ 
+  position: relative;
+}
+
+.menu__icon span {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: calc(.25rem - 1px);
+  left: calc(.25rem - 1px);
+  transition: transform .1806s cubic-bezier(.04,.04,.12,.96);
+}
+
+.menu__icon span:before {
+  content: '';
+  width: 1.5rem;
+  height: .125rem;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  transition: transform .1596s cubic-bezier(.52,.16,.52,.84) .1008s;
+}
+
+.menu__icon span:nth-child(1)::before {
+  top: .625rem;
+  transform: translateY(-3px);
+}
+
+.menu__icon span:nth-child(2)::before {
+  bottom: .625rem;
+  transform: translateY(3px);
+}
+
+.menu__icon:hover :nth-child(1),
+.menu__icon:hover :nth-child(2) {
+  transition: transform .3192s cubic-bezier(.04,.04,.12,.96) .1008s;
+}
+
+.menu__icon:hover :nth-child(1)::before,
+.menu__icon:hover :nth-child(2)::before {
+  transform: none;
+  transition: transform .1806s cubic-bezier(.04,.04,.12,.96);
+}
+
+.menu__icon:hover :nth-child(1) {
+  transform: rotate(45deg) translateY(1px);
+}
+
+.menu__icon:hover :nth-child(2) {
+  transform: rotate(-45deg) translateY(-1px);
+}
+/* From Uiverse.io by Galahhad */ 
+/* level settings 👇 */
+
+.slider {
+  /* slider */
+  --slider-width: 100%;
+  --slider-height: 6px;
+  --slider-bg: rgb(82, 82, 82);
+  --slider-border-radius: 999px;
+  /* level */
+  --level-color: #fff;
+  --level-transition-duration: .1s;
+  /* icon */
+  --icon-margin: 15px;
+  --icon-color: var(--slider-bg);
+  --icon-size: 25px;
+}
+
+.slider {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.slider .volume {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: var(--icon-margin);
+  color: var(--icon-color);
+  width: var(--icon-size);
+  height: auto;
+}
+
+.slider .level {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  background: var(--slider-bg);
+  overflow: hidden;
+  border-radius: var(--slider-border-radius);
+  -webkit-transition: height var(--level-transition-duration);
+  -o-transition: height var(--level-transition-duration);
+  transition: height var(--level-transition-duration);
+  cursor: inherit;
+}
+
+.slider .level::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+  box-shadow: -200px 0 0 200px var(--level-color);
+}
+
+.slider:hover .level {
+  height: calc(var(--slider-height) * 2);
+}
+  .show {
+    display: none; /* Show elements with the 'show' class */
+  }
+@media screen and (max-width: 767px) {
+  /* Styles for screens with a maximum width of 767px (typical for mobile devices) */
+.volume {
+    display: none; /* Hide the volume control on small screens */
+  }
+  .show {
+    display: block; /* Show elements with the 'show' class */
+  }
+ .mobilePlayer {
+  border-left: 4px solid; /* width of the border */
+  border-right: 4px solid;
+  border-image: linear-gradient(to bottom, yellow, black) 1; /* gradient applied */
+}
+
+  .noshow {
+    display: none; /* Hide elements with the 'noshow' class */  }
+}
+
+
+/*mobile landscape*/
+/* Mobile landscape (max-width: 768px and landscape) */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  /* Your styles here */
+ html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.log{
+  width: 100vw;
+ overflow: auto;
+  margin-left:-35px ;
+}
+.log-text{
+  overflow:auto;
+background-size: cover;
+background-repeat: "no-repeat";
+background-position: "center";
+width: 900px;
+height: 800px;
+}
+
+.poster{
+display: grid;
+grid-row: 1fr 1fr 1fr;
+}
+.header{
+    margin-left: 40px !important; /* Adjust the margin as needed */
+    
+}
+.apparel{
+  margin-left: -100px;
+}
+.land-mob{
+  margin-left: -20px;
+}
+.land-gallery{
+  width: 105vw !important;
+}
+.head{
+
+  margin-right: 50px;
+}
+.ocean{
+width: screen;
+overflow: hidden;
+  margin-left: 10px;
+}
+.aud-player{
+  margin-left: -260px !important;
+scale: 0.55;
+}
+.mob-label{
+  margin-left: 50px !important;}
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) {
+  
+  /* CSS for iPad Mini (portrait) */
+  
+
+  html, body {
+     
+  overflow-x: hidden;
+  width: 100%;
+}
+.header{
+    margin-left: 55px !important; /* Adjust the margin as needed */
+ 
+    width: 96%;
+}
+.head{
+
+  margin-right: 0px;
+}
+.ocean{
+width: 103%;
+overflow: hidden;
+  margin-left: 10px;
+}
+.aud-player{
+  margin-left: -260px !important;
+scale: 0.55;
+}
+.mob-label{
+  margin-left: 50px !important;}
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) {
+  
+  /* CSS for iPad Mini (landscape) */
+  
+.log{
+  width: 100vw;
+  margin-left:-35px ;
+}
+.log-text{
+  width: 100vw;
+  height: 60vh !important;
+}
+  html, body {
+     
+  overflow-x: hidden;
+  width: 100%;
+}
+.header{
+    margin-left: 55px !important; /* Adjust the margin as needed */
+ 
+    width: 96%;
+}
+.head{
+
+  margin-right: 10px;
+}
+.ocean{
+width: 103%;
+overflow: hidden;
+  margin-left: 10px;
+}
+.aud-player{
+  margin-left: -150px !important;
+scale: 0.7;
+}
+.mob-label{
+  margin-left: 50px !important;}
+
+}
+
+
+
+
+/* Phones */
+@media (max-width: 480px) {
+  .sphere-root { min-height: 100svh; overflow-x: hidden; }
+  .viewer-frame { width: 100% !important; height: auto !important; }
+  .stage { perspective: calc(var(--radius) * 1.6); }
+}
+
+/* Small tablets / large phones (portrait) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .sphere-root { min-height: 100svh; overflow-x: hidden; }
+  .viewer-frame { width: min(100%, 560px) !important; height: auto !important; }
+  .stage { perspective: calc(var(--radius) * 1.7); }
+
+
+    
+.log{
+  width: 100vw;
+  margin-left:-33px ;
+}
+.log-text{
+  width: 100vw;
+  height: 45vh !important;
+}
+  .poster{
+display: grid;
+grid-row: 1fr 1fr 1fr;
+}
+}
+
+/* Tablets / small laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sphere-root { min-height: 100svh; }
+  .viewer-frame { width: min(100%, 640px) !important; height: auto !important; }
+  .stage { perspective: calc(var(--radius) * 1.8); }
+}
+
+/* Laptops / desktops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .sphere-root { min-height: 90vh; }
+}
+
+/* Ultra wide */
+@media (min-width: 1441px) {
+  .sphere-root { min-height: 90vh; }
+  .viewer-frame { width: min(70vh, 800px) !important; height: auto !important; }
+}
+
+/* Touch devices */
+@media (pointer: coarse) {
+  .sphere-root { touch-action: none; }
+  .item__image { cursor: default; }
+}
