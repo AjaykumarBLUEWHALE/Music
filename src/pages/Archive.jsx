@@ -6,7 +6,7 @@ const Archive = () => {
   return (
     <>
        <Label title="ARCHIVE" />
-       <div className=' sm:w-[98.95vw] land-gallery w-[110vw] ml-[-68px] sm:ml-[90]'>
+       <div className=' sm:w-[98.95vw]   land-gallery w-[110vw] ml-[-68px] sm:ml-[90]'>
       <div className="gallery">
       {picture.map((item) => (
         <img
